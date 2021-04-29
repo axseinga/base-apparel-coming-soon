@@ -1,0 +1,27 @@
+/////// Colors ///////
+
+$color-red-light: hsl(0, 36%, 70%);
+$color-red: hsl(0, 93%, 68%);
+
+$color-dark-grey: hsl(0, 6%, 24%);
+
+////// Gradients //////
+
+// Linear, 135deg
+$color-gradient-1-a: hsl(0, 0%, 100%);
+$color-gradient-1-b: hsl(0, 100%, 98%);
+// Linear, 135deg
+$color-gradient-2-a: hsl(0, 80%, 86%);
+$color-gradient-2-b: hsl(0, 74%, 74%);
+
+//////// Fonts /////////
+
+$font-primary: "Josefin Sans", sans-serif;
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
