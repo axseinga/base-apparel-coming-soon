@@ -73,8 +73,7 @@ body {
     content: url("../images/hero-mobile.jpg"); }
     @media only screen and (min-width: 62.5rem) {
       .text-container::before {
-        display: none;
-        padding: 5rem; } }
+        display: none; } }
 
 .heading {
   font-size: 4rem;
@@ -130,11 +129,17 @@ body {
       position: absolute;
       top: 12.3rem;
       left: 25rem; }
+      @media only screen and (min-width: 62.5rem) {
+        .form__input--error {
+          top: 14.4rem; } }
     .form__input--message {
       margin-top: 10px;
       font-size: 1.2rem;
       position: absolute;
       left: 7rem; }
+      @media only screen and (min-width: 62.5rem) {
+        .form__input--message {
+          left: 2rem; } }
   .form__button {
     height: 45px;
     width: 60px;
