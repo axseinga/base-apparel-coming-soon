@@ -23,18 +23,67 @@
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
   <body>
-    We're coming soon Hello fellow shoppers! We're currently building our new
-    fashion store. Add your email below to stay up-to-date with announcements
-    and our launch deals. Email Address
+    <div class="container-page">
+      <header class="header">
+        <img
+          src="./images/logo.svg"
+          alt="Logo Base Apparel"
+          class="header--logo"
+        />
+      </header>
 
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </p>
-    </footer>
+      <div class="container-content">
+        <main class="content">
+          <div class="text-container">
+            <h1 class="heading">
+              <span class="heading--bold"> We're </span> coming soon
+            </h1>
+            <fieldset class="form">
+              <label for="email" class="form__label"
+                >Hello fellow shoppers! We're currently building our new fashion
+                store. Add your email below to stay up-to-date with
+                announcements and our launch deals.</label
+              >
+              <br />
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt="Warning - input error"
+                class="form__input--error hidden"
+                id="sign"
+              />
+              <button class="form__button" id="button">
+                <img
+                  src="./images/icon-arrow.svg"
+                  alt="Icon arrow on submit button"
+                  class="form__button--img"
+                />
+              </button>
+              <p class="form__input--message hidden" id="message">
+                Please provide a valid email
+              </p>
+            </fieldset>
+
+            <footer>
+              <p class="attribution">
+                Challenge by
+                <a
+                  href="https://www.frontendmentor.io?ref=challenge"
+                  target="_blank"
+                  >Frontend Mentor</a
+                >. Coded by <a href="https://github.com/axseinga">Axseinga</a>.
+              </p>
+            </footer>
+          </div>
+        </main>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

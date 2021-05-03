@@ -7,20 +7,229 @@ $color-dark-grey: hsl(0, 6%, 24%);
 
 ////// Gradients //////
 
-// Linear, 135deg
-$color-gradient-1-a: hsl(0, 0%, 100%);
-$color-gradient-1-b: hsl(0, 100%, 98%);
-// Linear, 135deg
-$color-gradient-2-a: hsl(0, 80%, 86%);
-$color-gradient-2-b: hsl(0, 74%, 74%);
+$gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
-//////// Fonts /////////
+////// Fonts ///////
 
 $font-primary: "Josefin Sans", sans-serif;
+
+////// Breakpoint /////
+
+$bp-desktop: 62.5rem;
+$bp-big-desktop: 96.1875rem;
+
+///// Styles //////
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px/16px
+  font-family: $font-primary;
+  font-weight: 300;
+}
+
+body {
+  width: 100%;
+  background: $gradient-1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container-page {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  overflow: hidden;
+  height: 100vh;
+
+  @media only screen and (min-width: $bp-desktop) {
+    max-width: 100%;
+    min-width: min-content;
+    height: 100vh;
+    background: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-position: left bottom;
+  }
+}
+
+.content {
+  @media only screen and (min-width: $bp-desktop) {
+    display: flex;
+    justify-content: space-between;
+    &::after {
+      content: url("../images/hero-desktop.jpg");
+      display: block;
+      height: 100vh;
+    }
+  }
+}
+
+.header {
+  align-self: start;
+  padding: 25px;
+
+  &--logo {
+    width: 10rem;
+    height: auto;
+
+    @media only screen and (min-width: $bp-desktop) {
+      width: 25rem;
+    }
+  }
+
+  @media only screen and (min-width: $bp-desktop) {
+    display: block;
+    position: absolute;
+    padding: 0;
+    top: 8%;
+    left: 9.3%;
+    align-self: end;
+  }
+}
+
+.text-container {
+  max-width: 375px;
+  text-align: center;
+
+  @media only screen and (min-width: $bp-desktop) {
+    max-width: 100%;
+    min-width: 50%;
+    align-self: start;
+    text-align: left;
+    padding: 15rem;
+  }
+
+  &::before {
+    content: url("../images/hero-mobile.jpg");
+    //display: block;
+
+    @media only screen and (min-width: $bp-desktop) {
+      display: none;
+    }
+  }
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: 600;
+  color: $color-dark-grey;
+  text-transform: uppercase;
+  line-height: 4.5rem;
+  letter-spacing: 0.8rem;
+  padding: 6rem 3.5rem 1.5rem 3.5rem;
+
+  @media only screen and (min-width: $bp-desktop) {
+    font-size: 8rem;
+    padding-left: 0;
+    line-height: 8rem;
+  }
+
+  &--bold {
+    color: $color-red-light;
+    font-weight: 300;
+  }
+}
+
+.form {
+  border: 0;
+  color: $color-red-light;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+
+  padding: 0 2.5rem;
+
+  position: relative;
+
+  @media only screen and (min-width: $bp-desktop) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding: 0 16rem 0 0;
+  }
+
+  &__input {
+    width: 250px;
+    height: 45px;
+    margin: 3rem 0 0 0;
+    padding: 1.5rem 2rem;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 0.1px solid $color-red-light;
+    outline: none;
+    color: $color-red-light;
+    opacity: 50%;
+
+    @media only screen and (min-width: $bp-desktop) {
+      width: 400px;
+      height: 50px;
+    }
+
+    &::placeholder {
+      color: $color-red-light;
+      font-family: $font-primary;
+      font-weight: 300;
+    }
+
+    &--error {
+      width: 20px;
+      position: absolute;
+      top: 12.3rem;
+      left: 25rem;
+    }
+
+    &--message {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 7rem;
+    }
+  }
+
+  &__button {
+    height: 45px;
+    width: 60px;
+    background: $gradient-2;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px -5px $color-red-light;
+
+    position: absolute;
+    top: 11rem;
+    left: 28rem;
+
+    @media only screen and (min-width: $bp-desktop) {
+      height: 50px;
+      width: 80px;
+      top: 12.9rem;
+      left: 32rem;
+    }
+
+    @media only screen and (min-width: $bp-big-desktop) {
+      top: 10.5rem;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding-top: 5rem;
+
+  @media only screen and (min-width: $bp-desktop) {
+    padding-top: 9rem;
+  }
 }
 .attribution a {
   color: hsl(228, 45%, 44%);

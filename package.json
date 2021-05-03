@@ -7,5 +7,8 @@
     "compile:sass": "node-sass sass/sass.scss css/style.css -w"
   },
   "author": "Agnieszka Urbanowicz",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
 }
